@@ -165,7 +165,7 @@ button {
 }
 
 @media (max-width: 768px) {
-  .section { padding: 0; }
+  .section { padding: var(--space-xl) 0 0; }
 }
 
 .section--dark {
