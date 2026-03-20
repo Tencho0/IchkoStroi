@@ -164,6 +164,10 @@ button {
   padding: var(--space-4xl) 0;
 }
 
+@media (max-width: 768px) {
+  .section { padding: 0; }
+}
+
 .section--dark {
   background-color: var(--clr-dark);
   color: var(--clr-gray-200);
@@ -236,6 +240,11 @@ button {
   transition: all var(--transition);
   white-space: nowrap;
   text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .btn { white-space: normal; text-align: center; }
+  .btn--lg { padding: 0.85rem 1.5rem; font-size: var(--fs-sm); }
 }
 
 .btn--primary {
@@ -455,6 +464,28 @@ button {
   padding: var(--space-5xl) 0 var(--space-3xl);
 }
 
+@media (max-width: 768px) {
+  .hero {
+    min-height: 65vh;
+    padding: var(--space-4xl) 0 var(--space-2xl);
+  }
+  .hero--small {
+    min-height: 38vh;
+    padding: var(--space-4xl) 0 var(--space-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 55vh;
+    padding: var(--space-3xl) 0 var(--space-2xl);
+  }
+  .hero--small {
+    min-height: 30vh;
+    padding: var(--space-3xl) 0 var(--space-xl);
+  }
+}
+
 .hero__bg-pattern {
   position: absolute;
   inset: 0;
@@ -538,8 +569,22 @@ button {
 .stats-bar {
   position: relative;
   z-index: 10;
-  margin-top: -4rem;
+  margin-top: -3rem;
   margin-bottom: var(--space-3xl);
+}
+
+/* Extra hero bottom padding to make room for stats bar overlap */
+.hero + .stats-bar {
+  margin-top: -3rem;
+}
+
+.hero:has(+ .stats-bar) {
+  padding-bottom: var(--space-5xl);
+}
+
+@media (max-width: 480px) {
+  .stats-bar { margin-top: -2rem; }
+  .hero:has(+ .stats-bar) { padding-bottom: var(--space-4xl); }
 }
 
 .stats-bar__inner {
@@ -1776,6 +1821,22 @@ button {
   transform: translateY(0);
 }
 
+/* Disable scroll animations on mobile — content shows immediately */
+@media (max-width: 768px) {
+  .fade-in,
+  .fade-in-left,
+  .fade-in-right,
+  .scale-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .stagger-children > * {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* --- Page load fade --- */
 .page-content {
   animation: pageLoad 0.5s ease;
@@ -2065,7 +2126,7 @@ button {
   }
 
   .header__nav .nav-link { font-size: var(--fs-md); }
-  .header__cta { margin-left: 0; margin-top: var(--space-md); }
+  .header__cta { display: none; }
 }
 
 /* --- Benefits Grid (service sub-pages) --- */
