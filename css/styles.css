@@ -398,6 +398,17 @@ button {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* Mobile overlay — hidden by default at ALL sizes */
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: calc(var(--z-mobile-menu) - 1);
+}
+
+.mobile-overlay.active { display: block; }
+
 @media (max-width: 900px) {
   .hamburger { display: flex; }
 
@@ -425,16 +436,6 @@ button {
   .nav-link { font-size: var(--fs-md); }
 
   .nav-cta { margin-left: 0; margin-top: var(--space-md); }
-
-  .mobile-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: calc(var(--z-mobile-menu) - 1);
-  }
-
-  .mobile-overlay.active { display: block; }
 }
 
 /* --- Hero Sections --- */
@@ -1971,6 +1972,28 @@ button {
   display: flex;
   align-items: center;
   gap: var(--space-xl);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav-list li {
+  list-style: none;
+}
+
+/* Also support <ul> inside .nav and .nav-list */
+.nav ul,
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li,
+.nav ul li {
   list-style: none;
 }
 
