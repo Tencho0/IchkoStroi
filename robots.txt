@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ichkostroy.pages.dev/sitemap.xml

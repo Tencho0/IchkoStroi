@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/TenchoBostandzhiev/source/GitHub -Tencho Bostandzhiev/IchkoStroi/**)",
+      "Bash(done)",
+      "Bash(start \"\" \"c:/Users/TenchoBostandzhiev/source/GitHub -Tencho Bostandzhiev/IchkoStroi/index.html\")"
+    ]
+  }
+}
